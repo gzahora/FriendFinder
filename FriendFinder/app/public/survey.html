@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Survey</title>
 </head>
 
-<body>
-    <div class="containter">
-        <div class="jumbotron text-center">
+<body style="background-color:steelblue">
+    <div class="containter text-body">
+        <div class="jumbotron text-center mb-3 p-2">
             <h1 class="display-4"><strong>Find a Friend!</strong></h1>
             <p class="lead">Take the below survey to determine your best match for a new friend.</p>
             <p>The questions are answered by the numbers 1 through 5, where 1 is strongly disagree and 5 is strongly
@@ -23,7 +22,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="background-color: rgb(166, 179, 207)">
         <h1>Survey</h1>
         <br>
         <form>
@@ -147,6 +146,7 @@
         </form>
         <div class="text-center">
             <button id="submitSurvey" type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <button id="submitRefresh" type="submit" class="btn btn-primary btn-lg">Clear</button>
             <br><br><br>
         </div>
 
@@ -162,7 +162,7 @@
                 </div>
                 <div class="modal-body">
                   <h2 id="userMatch"></h2>
-                 <img id="userMatchImage" src="#">
+                 <img class="img-responsive" id="userMatchImage" src="#" style="width: 100%">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -225,6 +225,10 @@
             // If a required field is missing, show alert
             alert("Survey is incomplete!");
         }
+    });
+
+    $("#submitRefresh").on("click", function (event) {
+    window.location.reload();
     });
 
 </script>
